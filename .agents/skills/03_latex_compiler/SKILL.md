@@ -50,5 +50,8 @@ Read `cv_injection_data.md`, `skill_matrix.md`, and `letter_injection_data.md`. 
 **STEP 4: Inject the Cover Letter Content**
 - Replace subject and body paragraphs.
 
-**STEP 5: Verification**
-Report modified lines and instruct the user to compile.
+**STEP 5: Verification & Compilation**
+1. Report modified lines.
+2. **Offer Compilation:** Ask the user: "Soll ich den Lebenslauf und das Anschreiben direkt für Sie kompilieren?"
+3. **If "Yes":** Run `latexmk -pdf -interaction=nonstopmode document.tex` in both `cv/` and `letter/` directories.
+4. If successful, confirm that the PDFs are ready for bundling.

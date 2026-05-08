@@ -43,6 +43,17 @@ interview_questions.md
 cv_injection_data.md
 letter_injection_data.md
 additional_content_letter.txt
+baseline_profile.md
+profile.json
+skill_matrix.md
+application_strategy.md
+
+# Job Hunter Artifacts
+job_leads.json
+job_leads_enriched.json
+job_leads_filtered.json
+job_leads.md
+test_leads.json
 
 # Personal Assets (User should add their own)
 cv/*.jpg
@@ -51,7 +62,18 @@ cv/*.png
 letter/*.jpg
 letter/*.jpeg
 letter/*.png
+profile.jpg
 
 # Import directory for initialization
 import/*
 !import/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/

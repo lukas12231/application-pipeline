@@ -50,13 +50,14 @@ This repository uses an agentic **Workflow Controller**. You do not need to trig
 
 | Phase | Description |
 | :--- | :--- |
-| **1. Initialization** | Bootstraps your professional history into a structured `baseline_profile.md`. |
-| **2. Analysis** | Maps your profile against the job ad and identifies "Hidden Pain Points". |
-| **3. Strategy** | Defines a winning narrative and pivoting strategy for the application. |
-| **3.5 Skill Matrix Review** | Dedicated phase to review and adjust your technical competence matrix. |
-| **4. Synthesis** | Rewrites CV bullets (XYZ Formula) and drafts a targeted cover letter. |
-| **5. Injection** | Safely updates LaTeX templates and handles asset/logo mapping. |
-| **6. Bundling** | Merges compiled PDFs and attachments into a single `Bewerbung.pdf`. |
+| **0. Initialization** | Bootstraps your professional history into a structured `baseline_profile.md`. |
+| **0.5 Scouting** | (Optional) Automated discovery of suitable roles in Germany. |
+| **1. Analysis** | Maps your profile against the job ad and identifies "Hidden Pain Points". |
+| **2. Strategy** | Defines a winning narrative and pivoting strategy for the application. |
+| **2.5 Skill Matrix Review** | Dedicated phase to review and adjust your technical competence matrix. |
+| **3. Synthesis** | Rewrites CV bullets (XYZ Formula) and drafts a targeted cover letter. |
+| **4. Injection** | Safely updates LaTeX templates and handles asset/logo mapping. |
+| **5. Bundling** | Merges compiled PDFs and attachments into a single `Bewerbung.pdf`. |
 
 ---
 
@@ -82,6 +83,9 @@ The "Resume Architect". Optimizes your CV experience using the **XYZ Formula** (
 
 ### 06_pdf_bundler
 The "Final Assembly" agent. Provides a CLI-style interface to choose your bundle type and merge all documents into a professional submission package.
+
+### 07_job_hunter
+The "Automated Scout". Dynamically discovers, enriches, and filters job leads based on your `baseline_profile.md` and custom search criteria.
 
 ---
 

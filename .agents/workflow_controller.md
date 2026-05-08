@@ -1,38 +1,47 @@
-# Agent Workflow Controller
+# Agent Workflow Controller (Refined)
 
-This document defines the logic for the "Start the application flow" command.
+This document defines the state-machine logic for the end-to-end "Start the application flow" command.
 
-## State Detection Logic
+## 🔄 Pipeline State Machine
 
-When the user says "Start/Continue the application flow", the agent must:
+### 🏁 Phase 0: Discovery & Onboarding
+1.  **Check Profile**: Verify `baseline_profile.md` exists and is authentic.
+    - **IF MISSING/PLACEHOLDER**:
+        - List `import/`. If empty, **STOP** and ask the user: *"Please provide your professional history (PDF/LinkedIn) in the 'import/' folder."*
+        - If files exist, trigger `00_init_workspace`.
+2.  **Check Scouting Intent**: If `baseline_profile.md` is valid but no `job_ad.txt` exists:
+    - **ASK USER**: *"Do you have a specific job link, or should I scout suitable job ads for you in Germany?"*
+    - **IF SCOUT REQUESTED**:
+        - Ask for: **Target Role, Location, Min Salary**.
+        - Update `hunter_config.json`.
+        - Trigger `07_job_hunter`.
+        - **RESULT**: High-fidelity scouting results are written to `job_leads.md`.
+        - **USER ACTION**: Open `job_leads.md`, select a lead, and paste its full description into `job_ad.txt`.
+    - **IF SCOUT SKIPPED**:
+        - **ASK USER**: *"Please paste your target job advertisement into 'job_ad.txt' to continue."*
+        - **STOP** and wait for file creation.
 
-1.  **Check Initialization**:
-    - If `baseline_profile.md` is missing:
-        - Check `import/` folder.
-        - Trigger `00_init_workspace`.
-2.  **Check Job Context**:
-    - If `baseline_profile.md` exists but `job_ad.txt` is missing or contains the placeholder:
-        - Stop and ask the user to provide the job advertisement in `job_ad.txt`.
-3.  **Check Analysis State**:
-    - If `job_ad.txt` is ready but `target_profile.md` or `interview_questions.md` is missing:
-        - Trigger `01_gap_analyzer`.
-4.  **Check Strategic Intent**:
-    - If `target_profile.md` exists but `application_strategy.md` is missing:
-        - Trigger `02_content_architect`.
-5.  **Check Synthesis State**:
-    - If `interview_questions.md` exists and contains answers:
-        - If `cv_injection_data.md` or `letter_injection_data.md` is missing:
-            - Trigger `05_cv_content_optimizer` and `04_application_letter`.
-        - **Skill Matrix Review:** Once `skill_matrix.md` is generated, **STOP**. Ask the user to review the categories and star ratings (1-4). Explain the rating definitions.
-6.  **Check Injection State**:
-    - If injection data exists but `cv/document.tex` or `letter/document.tex` still contain placeholders:
-        - **Asset Inquiry (MANDATORY):** You **MUST** stop and ask the user if they want a profile photo and/or company logos.
-        - **HARD STOP:** Do not execute `03_latex_compiler` until the user has answered and (if logos are desired) provided the file-to-company mapping.
-        - Trigger `03_latex_compiler`.
-7.  **Check Bundling State**:
-    - If the `.tex` files are updated and `.pdf` files exist in `cv/` and `letter/`:
-        - Trigger `06_pdf_bundler`.
+    ### 🔍 Phase 1: Analysis & Strategy
+    3.  **Gap Analysis**: If `job_ad.txt` contains a single, valid job description:
+    - Trigger `01_gap_analyzer`.
 
-## Transition Rules
-- Never skip a step unless the output file already exists and is valid.
-- If a step requires user input (like answering questions), stop and wait for the user.
+    - **STOP** and wait for the user to answer `interview_questions.md`.
+4.  **Strategic Narrative**: If questions are answered but `application_strategy.md` is missing:
+    - Trigger `02_content_architect`.
+
+### ✍️ Phase 2: Synthesis & Review
+5.  **Content Optimization**: If strategy exists:
+    - Trigger `05_cv_content_optimizer` and `04_application_letter`.
+    - **STOP** for **Skill Matrix Review**: Ask the user to verify the `skill_matrix.md` ratings (1-4).
+
+### 🏗️ Phase 3: Injection & Bundling
+6.  **LaTeX Injection**: If review is complete:
+    - **Asset Inquiry (MANDATORY)**: Ask for profile photo and company logos.
+    - Trigger `03_latex_compiler`.
+7.  **Final Assembly**:
+    - Trigger `06_pdf_bundler`.
+
+## ⚖️ Transition Rules
+- **Proactivity**: Always suggest the next step.
+- **Integrity**: Never proceed with placeholders.
+- **Flexibility**: Allow the user to skip the scouting phase at any time.

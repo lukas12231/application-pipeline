@@ -18,6 +18,7 @@ This project is built around the **"Magic Command"** workflow. You don't need to
 - **"Start the application flow"**: Triggers the [Workflow Controller](.agents/workflow_controller.md) to detect the next logical step.
 - **"Optimize my CV for this job"**: Specifically triggers the analysis and CV generation skills.
 - **"Check my assets"**: Verifies if photos and logos are ready for compilation.
+- **"Scout new job opportunities"**: Triggers the job hunter skill to find roles in a specific region.
 
 ## 🛠️ Internal Logic (For Developers/AI)
 

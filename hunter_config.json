@@ -1,0 +1,28 @@
+{
+    "search": {
+        "job_titles": [
+            "Full Stack Developer",
+            "Python Developer",
+            "React Developer",
+            "Software Architect",
+            "AI Engineer",
+            "Cloud Engineer",
+            "System Engineer"
+        ],
+        "location": "YourCity",
+        "radius_km": 50,
+        "negative_keywords": [
+            "Fachinformatiker",
+            "Ausbildung",
+            "Umschulung",
+            "Auszubildende",
+            "Junior"
+        ]
+    },
+    "filters": {
+        "min_salary_eur": 0,
+        "required_education": "Master",
+        "semantic_matching": true,
+        "remote_flexibility": true
+    }
+}

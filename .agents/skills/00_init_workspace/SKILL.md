@@ -33,6 +33,7 @@ The user is starting a new application cycle. They might have an old CV in the `
 1. List all files in the `./import/` directory.
 2. Read the content of these files. For PDFs, use your visual or text-extraction capabilities to get the most accurate representation of the data.
 3. Read the content of `./cv/document.tex` and `./letter/document.tex`. Note that these might be sanitized placeholders or contain some old data.
+4. if the import folder contains pdf file(s), use pdftotext (python package in the current venv) to extract informations related to the user!
 
 **STEP 2: Synthesize the Baseline**
 Create a comprehensive profile of the user. Include:
