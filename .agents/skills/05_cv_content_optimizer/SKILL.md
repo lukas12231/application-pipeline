@@ -31,7 +31,8 @@ Rewrite the CV content to perfectly highlight technical competence and business 
     * **HARD STOP:** After generating this file, you **MUST** ask the user to review the ratings and categories. Explain the 1-4 scale clearly in the chat.
 4.  **Arbeitserfahrung Restructuring:**
     * Use the **XYZ Formula** (Accomplished [X] as measured by [Y], by doing [Z]).
-    * Structure: `### Company`, `**Title**`, `#### Project`, `* Bullets`, `* **Tech Stack**`.
+    * **Project Structure:** Group achievements into logical projects. 
+    * Format: `### Company`, `**Title**`, `#### Projekt: [Name]`, `* Bullets`.
 5.  **Education & Languages:** Clean up academic background and CEFR levels.
 
 **Output Format:**

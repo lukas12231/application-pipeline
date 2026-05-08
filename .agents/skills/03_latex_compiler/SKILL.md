@@ -30,12 +30,15 @@ Before you read any files or perform any edits, you **MUST** ask the user these 
 Read `cv_injection_data.md`, `skill_matrix.md`, and `letter_injection_data.md`. Ensure all text is LaTeX-safe (escape %, &, $).
 
 **STEP 2: Asset Handling & Mapping (IF YES)**
-1.  **IF "NO" to images:** Comment out `\roundpic` and remove logo paths.
-2.  **IF "YES" to Logos:** Ask for mapping (Image -> Company).
+1.  **IF "NO" to images:** Comment out `\roundpic` and set logo arguments to `{}`.
+2.  **IF "YES" to Logos:** Ask for mapping (Image -> Company). Set unmapped ones to `{}`.
 
 **STEP 3: Inject the CV Content**
 - **Summary:** Replace `Kurzprofil`.
-- **Experience:** Replace bullets. Expand LaTeX structure if needed.
+- **Experience:** 
+    - For each project in Markdown, use `\cvproject{[Name]}{[Itemize-List]}`.
+    - Wrap multiple projects within the description field of `\cvevent`.
+    - Use `[nosep,leftmargin=*,label=\textbullet]` for `itemize`.
 - **Kompetenzmatrix:** Replace the rows in the matrix table.
     - Convert numerical levels (1-4) from `skill_matrix.md` to `\faStar` commands.
     - Level 1: `\faStar\faStarO\faStarO\faStarO`

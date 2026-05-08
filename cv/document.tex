@@ -106,13 +106,19 @@
 			\vspace{1em}
 			\section*{Arbeitserfahrung}
 			
-			\begin{tabular}{p{0.1\textwidth} | p{0.45\textwidth} c}
-				\cvevent{[DATUM-VON]--Heute}{[ROLLE]}{[UNTERNEHMEN]}{[ORT] \color{cvred}}{\textbf{Projekt: [PROJEKTNAME]}:
-				\begin{itemize}[align=left,leftmargin=*,widest={10}]
-				\item [TÄTIGKEIT 1]
-				\item [TÄTIGKEIT 2]
-				\item [TÄTIGKEIT 3]
-			\end{itemize}
+			\begin{tabular}{p{0.1\textwidth} | p{0.45\textwidth} r}
+				\cvevent{[DATUM-VON]--Heute}{[ROLLE]}{[UNTERNEHMEN]}{[ORT] \color{cvred}}{
+					\cvproject{[PROJEKTNAME 1]}{
+						\begin{itemize}[nosep,leftmargin=*,label=\textbullet]
+							\item TÄTIGKEIT 1.1
+							\item TÄTIGKEIT 1.2
+						\end{itemize}
+					}
+					\cvproject{[PROJEKTNAME 2]}{
+						\begin{itemize}[nosep,leftmargin=*,label=\textbullet]
+							\item TÄTIGKEIT 2.1
+						\end{itemize}
+					}
 				}{logo.png}
 				\\
 				\cvevent{[DATUM-VON]--[DATUM-BIS]}{[ROLLE]}{[UNTERNEHMEN]}{[ORT] \color{cvred}}{
@@ -124,7 +130,7 @@
 			\end{tabular}		
 			\vspace{2em}
 			\section*{Ausbildung}	
-			\begin{tabular}{p{0.1\textwidth} | p{0.45\textwidth} c}
+			\begin{tabular}{p{0.1\textwidth} | p{0.45\textwidth} r}
 				\cvevent{[JAHR]--[JAHR]}{[ABSCHLUSS], \O [NOTE]}{[HOCHSCHULE]}{[ORT] \color{cvred}}{[TITEL-DER-ABSCHLUSSARBEIT]}{logo.png}
 			\end{tabular}
 
