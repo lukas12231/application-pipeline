@@ -1,0 +1,8 @@
+[KOPIEREN SIE DIE STELLENANZEIGE HIER HINEIN]
+
+Beispiel-Struktur:
+- Über das Unternehmen
+- Ihre Aufgaben
+- Ihr Profil (Tech Stack, Erfahrung)
+- Was wir bieten
+- Kontakt / Referenznummer

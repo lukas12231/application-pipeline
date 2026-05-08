@@ -1,0 +1,176 @@
+	% a mashup of hipstercv, friggeri and twenty cv
+	% https://www.latextemplates.com/template/twenty-seconds-resumecv
+	% https://www.latextemplates.com/template/friggeri-resume-cv
+	
+	\documentclass[darkhipster]{simplehipstercv}
+	% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+	% withoutsidebar
+	\usepackage[utf8]{inputenc}
+	\usepackage[default]{raleway}
+	\usepackage[margin=2.5cm, a4paper, left=1cm]{geometry}
+	\usepackage{changepage}
+	
+	%------------------------------------------------------------------ Variablen
+	
+	\newlength{\rightcolwidth}
+	\newlength{\leftcolwidth}
+	\setlength{\leftcolwidth}{0.25\textwidth}
+	\setlength{\rightcolwidth}{0.75\textwidth}
+	
+	%------------------------------------------------------------------
+	\title{CV [VORNAME] [NACHNAME]}
+	\author{\LaTeX{} Ninja}
+	\date{\today}
+	
+	\pagestyle{empty}
+	\begin{document}
+		
+		
+		\thispagestyle{empty}
+		%-------------------------------------------------------------
+		
+		\section*{Start}
+		
+		\simpleheader{cvgreen}{[VORNAME]}{[NACHNAME]}{[AKTUELLE-ROLLE]}{white}
+		
+		
+		
+		%------------------------------------------------
+		
+		% this has to be here so the paracols starts..
+		\subsection*{}
+		\vspace{2em}
+		
+		\setlength{\columnsep}{1.5cm}
+		\columnratio{0.27}
+		
+		\begin{paracol}{2}
+			\hbadness5000
+			%\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
+			
+			\paracolbackgroundoptions
+			
+			% 0.9,0.9,0.9 -- 0.8,0.8,0.8
+			
+			
+			\footnotesize
+			{\setasidefontcolour
+				%\flushright
+				\begin{center}
+					\roundpic{profile.jpg}
+				\end{center}
+				
+				\vspace{4em}
+				\bg{cvgreen}{white}{Über mich} \\[0.5em]
+				[VORNAME] [NACHNAME]
+				
+				[STRASSE] [HAUSNUMMER]
+				
+				[PLZ] [STADT]
+				
+				[GEBURTSDATUM]
+				
+				\bigskip
+				
+				\bg{cvgreen}{white}{Interessen}\\[0.5em]
+				[INTERESSE 1]	
+				
+				[INTERESSE 2]
+				
+				[INTERESSE 3]
+				\bigskip
+				
+				\bg{cvgreen}{white}{Sprachen}\\[0.5em]
+				\begin{tabular}{l | cc}
+					\textbf{Deutsch} & C2 & {\phantom{x}\footnotesize Muttersprache} \\
+					\textbf{Englisch} & C1 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny} \\
+				\end{tabular}
+				\vspace{4em}
+				
+				\infobubble{\faAt}{cvgreen}{white}{[EMAIL]}
+				\infobubble{\faPhone}{cvgreen}{white}{[TELEFON]}	
+				
+				\infobubble{\faLinkedin}{cvgreen}{white}{[LINKEDIN]}
+				
+				\infobubble{\faGithub}{cvgreen}{white}{[GITHUB]}
+				\phantom{turn the page}
+				
+				\phantom{turn the page}
+			}
+			%-----------------------------------------------------------
+			\switchcolumn
+			\small
+			\vspace*{-2em}
+			\textit{[KURZPROFIL: Beschreiben Sie hier Ihre Kernkompetenzen und beruflichen Ziele in 2-3 Sätzen.]}
+			
+			\vspace{1em}
+			\section*{Arbeitserfahrung}
+			
+			\begin{tabular}{p{0.1\textwidth} | p{0.45\textwidth} c}
+				\cvevent{[DATUM-VON]--Heute}{[ROLLE]}{[UNTERNEHMEN]}{[ORT] \color{cvred}}{\textbf{Projekt: [PROJEKTNAME]}:
+				\begin{itemize}[align=left,leftmargin=*,widest={10}]
+				\item [TÄTIGKEIT 1]
+				\item [TÄTIGKEIT 2]
+				\item [TÄTIGKEIT 3]
+			\end{itemize}
+				}{logo.png}
+				\\
+				\cvevent{[DATUM-VON]--[DATUM-BIS]}{[ROLLE]}{[UNTERNEHMEN]}{[ORT] \color{cvred}}{
+					\begin{itemize}[align=left,leftmargin=*,widest={10}]
+						\item [TÄTIGKEIT 1]
+						\item [TÄTIGKEIT 2]
+					\end{itemize}
+				}{logo.png}
+			\end{tabular}		
+			\vspace{2em}
+			\end{paracol}	
+			
+			\begin{adjustwidth}{1.5cm}{0cm}		
+			
+			\begin{minipage}[t]{0.9\textwidth}
+			\section*{Ausbildung}	
+			\begin{tabular}{p{0.1\textwidth} | p{0.75\textwidth} c}
+				\cvevent{[JAHR]--[JAHR]}{[ABSCHLUSS], \O [NOTE]}{[HOCHSCHULE]}{[ORT] \color{cvred}}{[TITEL-DER-ABSCHLUSSARBEIT]}{logo.png}
+			\end{tabular}
+			\end{minipage}
+
+			\newpage
+
+			\begin{minipage}[t]{0.95\textwidth}
+			\section*{Technische Kompetenzmatrix}
+			\small
+			\renewcommand{\arraystretch}{1.4}
+			\begin{tabular}{p{0.35\textwidth} p{0.25\textwidth} p{0.3\textwidth}}
+				\textbf{Bereich} & \textbf{Level} & \textbf{Kern-Technologien} \\
+				\hline
+				\textbf{Software Engineering} & \faStar\faStar\faStar\faStarO & [TECH 1], [TECH 2] \\
+				\textbf{Backend \& Cloud} & \faStar\faStar\faStarO\faStarO & [TECH 3] \\
+			\end{tabular}
+			
+			\vspace{1em}
+			\begin{center}
+				\scriptsize
+				\renewcommand{\arraystretch}{1.1}
+				\begin{tabular}{ll p{0.05\textwidth} ll}
+					\faStar\faStarO\faStarO\faStarO & Basic (Grundlagen) & & \faStar\faStar\faStarO\faStarO & Advanced (Sicher in der Anwendung) \\
+					\faStar\faStar\faStar\faStarO & \textbf{Expert} (Komplexe Projekte) & & \faStar\faStar\faStar\faStar & \textbf{Lead} (Methodische Führung) \\
+				\end{tabular}
+			\end{center}
+		\end{minipage}	
+	
+	\vspace{3em}
+	\begin{minipage}[t]{0.9\textwidth}
+	\section{Sonstiges}
+	\begin{itemize}[align=left,leftmargin=*,widest={10}]
+		\item \textbf{[SONSTIGES-TITEL-1]} \\
+		{} [SONSTIGES-BESCHREIBUNG-1] \\
+		\textit{[SONSTIGES-DETAILS-1]}
+		\\
+		\item \textbf{[SONSTIGES-TITEL-2]} \\
+		{} [SONSTIGES-BESCHREIBUNG-2] \\
+		\textit{[SONSTIGES-DETAILS-2]}
+	\end{itemize}
+\end{minipage}	
+	\end{adjustwidth}
+			
+	\end{document}

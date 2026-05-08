@@ -1,0 +1,57 @@
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.bcf
+*.synctex.gz
+*.pdf
+*.xdv
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+*.gz
+*.pdfsync
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Application Pipeline Artifacts
+job_ad.txt
+target_profile.md
+interview_questions.md
+cv_injection_data.md
+letter_injection_data.md
+additional_content_letter.txt
+
+# Personal Assets (User should add their own)
+cv/*.jpg
+cv/*.jpeg
+cv/*.png
+letter/*.jpg
+letter/*.jpeg
+letter/*.png
+
+# Import directory for initialization
+import/*
+!import/.gitkeep

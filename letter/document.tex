@@ -1,0 +1,62 @@
+	% a mashup of hipstercv, friggeri and twenty cv
+	% https://www.latextemplates.com/template/twenty-seconds-resumecv
+	% https://www.latextemplates.com/template/friggeri-resume-cv
+	
+	\documentclass[darkhipster]{simplehipstercv}
+	% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+	% withoutsidebar
+	\usepackage[utf8]{inputenc}
+	\usepackage[default]{raleway}
+	\usepackage[margin=2.0cm, a4paper]{geometry}
+	
+	
+	%------------------------------------------------------------------ Variablen
+	
+	\newlength{\rightcolwidth}
+	\newlength{\leftcolwidth}
+	\setlength{\leftcolwidth}{0.25\textwidth}
+	\setlength{\rightcolwidth}{0.75\textwidth}
+	
+	%------------------------------------------------------------------
+	\title{Anschreiben [VORNAME] [NACHNAME]}
+	\author{\LaTeX{} Ninja}
+	\date{\today}
+	\pagestyle{empty}
+	\begin{document}
+		\thispagestyle{empty}
+		%-------------------------------------------------------------
+		
+		\section*{Start}
+		
+		\simpleheader{cvgreen}{[VORNAME]}{[NACHNAME]}{
+		\small \icon{\faEnvelopeO}{white}{} [EMAIL] \icon{\faMapMarker}{white}{} [STRASSE] [HAUSNUMMER], [PLZ] [STADT] \icon{\faPhone}{white}{} [TELEFON]
+		}{white}		
+		
+		\vspace{4em}
+		
+		[ANSPRECHPARTNER] \\
+		{} [UNTERNEHMEN] \\
+		{} [STRASSE-UNTERNEHMEN] \\
+		{} [PLZ-STADT-UNTERNEHMEN]		
+		\begin{flushright}
+			[ORT-VON-DEM-AUS-GESCHRIEBEN-WIRD], \today
+		\end{flushright}
+		
+		\section*{Bewerbung als [POSITION] – Referenzcode: [REFERENZCODE]}
+		\doublespacing
+		\vspace{1em}
+Sehr geehrte(r) [ANSPRECHPARTNER],
+
+[EINLEITUNG: Beschreiben Sie Ihre Motivation und warum Sie sich bei diesem Unternehmen bewerben.]
+
+[HAUPTTEIL 1: Ihre Erfahrungen und wie diese zum Jobprofil passen.]
+
+[HAUPTTEIL 2: Ihre technischen Skills und Projekte.]
+
+[SCHLUSS: Gehaltsvorstellung, Kündigungsfrist und Vorfreude auf das Gespräch.]
+
+Mit freundlichen Grüßen, \\
+{} [VORNAME] [NACHNAME]
+
+	
+	\end{document}
